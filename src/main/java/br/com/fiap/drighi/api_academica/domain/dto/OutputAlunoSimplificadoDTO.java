@@ -1,7 +1,8 @@
 package br.com.fiap.drighi.api_academica.domain.dto;
 
 public record OutputAlunoSimplificadoDTO(
-        StringBuilder mensagem,
+        String mensagem,
+        StringBuilder uri,
         String primeiroNome,
         String nomeDoMeio,
         String sobrenome,
