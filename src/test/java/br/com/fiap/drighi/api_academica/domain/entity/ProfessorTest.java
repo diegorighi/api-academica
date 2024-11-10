@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -23,7 +24,7 @@ public class ProfessorTest {
                 "Smith",
                 LocalDateTime.of(1980, 1, 1, 0, 0),
                 new Endereco("12345-678", "Rua A", "123", "Apto 1", "Bairro B", "Cidade C", UfEnum.SP, "Brasil"),
-                Arrays.asList(new Documento(DocumentoEnum.CPF, LocalDateTime.of(1980, 1, 1, 0, 0), LocalDateTime.of(2023, 1, 1, 0, 0), "123.456.789-00", "SSP", true), new Documento(DocumentoEnum.CNH, LocalDateTime.of(1980, 1, 1, 0, 0), LocalDateTime.of(2023, 1, 1, 0, 0), "123456789", "SSP", false)),
+                Set.of(new Documento(DocumentoEnum.CPF, LocalDateTime.of(1980, 1, 1, 0, 0), LocalDateTime.of(2023, 1, 1, 0, 0), "123.456.789-00", "SSP", true), new Documento(DocumentoEnum.CNH, LocalDateTime.of(1980, 1, 1, 0, 0), LocalDateTime.of(2023, 1, 1, 0, 0), "123456789", "SSP", false)),
                 Arrays.asList(new Contato("jhon@email.com", "(11) 99999-9999", true), new Contato("doe@mailer.com.br", "(11) 99999-9998", false)),
                 "12345",
                 true);
@@ -46,7 +47,8 @@ public class ProfessorTest {
                 "Smith",
                 LocalDateTime.of(1980, 1, 1, 0, 0),
                 new Endereco("12345-678", "Rua A", "123", "Apto 1", "Bairro B", "Cidade C", UfEnum.SP, "Brasil"),
-                Arrays.asList(new Documento(DocumentoEnum.CPF, LocalDateTime.of(1980, 1, 1, 0, 0), LocalDateTime.of(2023, 1, 1, 0, 0), "123.456.789-00", "SSP", true), new Documento(DocumentoEnum.PASSAPORTE, LocalDateTime.of(1980, 1, 1, 0, 0), LocalDateTime.of(2023, 1, 1, 0, 0), "123456789", "SSP", false)),
+
+                Set.of(new Documento(DocumentoEnum.CPF, LocalDateTime.of(1980, 1, 1, 0, 0), LocalDateTime.of(2023, 1, 1, 0, 0), "123.456.789-00", "SSP", true), new Documento(DocumentoEnum.PASSAPORTE, LocalDateTime.of(1980, 1, 1, 0, 0), LocalDateTime.of(2023, 1, 1, 0, 0), "123456789", "SSP", false)),
                 Arrays.asList(new Contato("jhon@email.com", "(11) 99999-9999", true), new Contato("doe@mailer.com.br", "(11) 99999-9998", false)),
                 "12345",
                 true

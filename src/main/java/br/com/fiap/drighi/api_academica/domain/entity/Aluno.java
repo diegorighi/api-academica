@@ -26,7 +26,7 @@ public class Aluno extends Pessoa {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "aluno")
     private List<Matricula> matriculas = new ArrayList<>();
 
-    @Getter
+    @Getter @Setter
     private String ra;
 
     @Getter
@@ -71,6 +71,8 @@ public class Aluno extends Pessoa {
             LocalDateTime dataIngresso
     ) {
         super(primeiroNome, nomeMeio, sobrenome, dataNascimento);
+        this.endereco = endereco;
+        this.documentos = documentos;
         this.contatos = contatos;
         this.ra = ra;
         this.dataIngresso = dataIngresso;
