@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequestMapping("/aluno")
+@SuppressWarnings("unused")
 public class AlunoController {
 
     private final AlunoService alunoService;
@@ -31,3 +32,4 @@ public class AlunoController {
     }
 
 }
+
