@@ -1,6 +1,5 @@
 name: Test and Approve
 
-# Executa o workflow em pull requests direcionados à branch `main`
 on:
   pull_request:
     branches:
@@ -11,21 +10,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout do repositório para acessar o código
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      # Configura o ambiente para Java
       - name: Set up Java
         uses: actions/setup-java@v2
         with:
-          java-version: '11'
+          distribution: 'adopt'  # Specify the distribution
+          java-version: '23'
+          java-package: 'jdk'
+          architecture: 'x64'
+          check-latest: false
+          server-id: 'github'
+          server-username: '${{ github.actor }}'
+          server-password: '${{ secrets.GITHUB_TOKEN }}'
+          overwrite-settings: true
 
-      # Instala as dependências e executa os testes
       - name: Build and test with Maven
         run: mvn clean install
 
-      # Define o status da execução dos testes
       - name: Mark PR as ready for merge
-        if: ${{ success() }}  # Isso valida que os testes passaram
+        if: ${{ success() }}
         run: echo "All tests passed, ready for merge"
