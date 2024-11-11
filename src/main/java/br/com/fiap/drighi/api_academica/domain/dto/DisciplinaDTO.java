@@ -1,4 +1,13 @@
 package br.com.fiap.drighi.api_academica.domain.dto;
 
-public class DisciplinaDTO {
+import br.com.fiap.drighi.api_academica.domain.enums.DisciplinaEnum;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public record DisciplinaDTO(
+
+        @JsonProperty("nome")
+        DisciplinaEnum nome
+) {
+
+
 }

@@ -4,6 +4,7 @@ import br.com.fiap.drighi.api_academica.domain.enums.DisciplinaEnum;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -18,7 +19,7 @@ public class Disciplina {
     @EqualsAndHashCode.Exclude
     private Long id;
 
-    @Getter
+    @Getter @Setter
     @ManyToOne
     @JoinColumn(name = "professor_id")
     private Professor professor;
@@ -40,6 +41,10 @@ public class Disciplina {
         this.professor = professor;
         this.nome = nome;
         this.cursos = cursos;
+    }
+
+    public Disciplina(DisciplinaEnum nome) {
+        this.nome = nome;
     }
 
     public void addCurso(Curso curso) {
