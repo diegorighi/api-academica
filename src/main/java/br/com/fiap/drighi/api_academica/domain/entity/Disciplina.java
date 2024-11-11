@@ -2,6 +2,7 @@ package br.com.fiap.drighi.api_academica.domain.entity;
 
 import br.com.fiap.drighi.api_academica.domain.enums.DisciplinaEnum;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
@@ -40,6 +41,10 @@ public class Disciplina {
         this.professor = professor;
         this.nome = nome;
         this.cursos = cursos;
+    }
+
+    public Disciplina(DisciplinaEnum nome) {
+        this.nome = nome;
     }
 
     public void addCurso(Curso curso) {
