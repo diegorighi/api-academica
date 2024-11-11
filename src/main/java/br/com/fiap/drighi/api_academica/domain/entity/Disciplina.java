@@ -2,9 +2,9 @@ package br.com.fiap.drighi.api_academica.domain.entity;
 
 import br.com.fiap.drighi.api_academica.domain.enums.DisciplinaEnum;
 import jakarta.persistence.*;
-import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -19,7 +19,7 @@ public class Disciplina {
     @EqualsAndHashCode.Exclude
     private Long id;
 
-    @Getter
+    @Getter @Setter
     @ManyToOne
     @JoinColumn(name = "professor_id")
     private Professor professor;
